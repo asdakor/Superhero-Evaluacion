@@ -8,9 +8,9 @@ $(document).ready(function () {
 
         if (superheroid > 0 && superheroid < 732) {
             getSuperhero(superheroid)
-
+            $("#msjError").text('Superheroe encontrado !!').css('color','green')
         } else {
-
+            $("#msjError").text('Error debe ser un numero entre 1 y 731 !!!').css('color','red')
         }
 
 

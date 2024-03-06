@@ -1,16 +1,16 @@
 $(document).ready(function () {
     const form = $("#formulario")
     const encontrado = $('#encontrado')
-   
+
     form.on("submit", function (event) {
         const superheroid = +$("#superheroid").val()
         event.preventDefault()
 
         if (superheroid > 0 && superheroid < 732) {
             getSuperhero(superheroid)
-            $("#msjError").text('Superheroe encontrado !!').css('color','green')
+            $("#msjError").text('Superheroe encontrado !!').css('color', 'green')
         } else {
-            $("#msjError").text('Error debe ser un numero entre 1 y 731 !!!').css('color','red')
+            $("#msjError").text('Error debe ser un numero entre 1 y 731 !!!').css('color', 'red')
         }
 
 
@@ -45,8 +45,6 @@ $(document).ready(function () {
                     strength: data.powerstats.strength,
                     intelligence: data.powerstats.intelligence
                 }
-            
-
                 encontrado.html(
                     `
                     <div class="row">
@@ -103,23 +101,10 @@ $(document).ready(function () {
                     { y: superherostats.intelligence, indexLabel: `intelligence (${superherostats.intelligence})` },
                 ];
                 chart.render();
-
-
-
-
-
-                
-                
-
-
             },
             error(error) {
                 console.log(error)
             }
-
         })
     }
-
-
-
 });
